@@ -29,12 +29,18 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::controller(AdminDefenseController::class)->prefix('admin/defense')->middleware('auth')->name('admin.defense.')->group(function () {
+Route::controller(AdminDefenseController::class)->prefix('admin/defense')->middleware('auth')->name('admin.defenses.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/create', 'create')->name('create');
-    Route::post('/', 'store')->name('store');
     Route::get('/{defense}', 'show')->name('show');
     Route::get('/{defense}/edit', 'edit')->name('edit');
-    Route::put('/{defense}', 'update')->name('update');
     Route::delete('/{defense}', 'destroy')->name('destroy');
+});
+
+Route::controller(AdminDefenseController::class)->prefix('admin/defense/level')->middleware('auth')->name('admin.defenses.levels.')->group(function () {
+    //Route::get('/', 'index')->name('index');
+    Route::get('/{defense}/create_level', 'create_level')->name('create');
+    //Route::get('/{defense}', 'show')->name('show');
+    Route::get('/{defense}/edit', 'edit_level')->name('edit');
+    Route::delete('/{defense}', 'destroy_level')->name('destroy');
 });

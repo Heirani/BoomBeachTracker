@@ -16,7 +16,7 @@
     <div class="fixed bottom-0 top-[42px] w-60 text-gray-600 bg-white shadow-r- pt-3 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)]" x-show="open" x-transition.duration.500ms x-transition.scale.origin.left>
 
         <x-layouts.sidebar-item active="{{ request()->routeIs('defenses.*') }}">
-            <a href="#" class="block w-full">
+            <a href="{{ route('admin.defenses.index') }}" class="block w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"  class="float-left"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><g><path d="M10.5,15H8v-3h2.5V9.5h3V12H16v3h-2.5v2.5h-3V15z M19,8v11c0,1.1-0.9,2-2,2H7c-1.1,0-2-0.9-2-2V8c0-1.1,0.9-2,2-2h10 C18.1,6,19,6.9,19,8z M17,8H7v11h10V8z M18,3H6v2h12V3z" class="{{ request()->routeIs('produits.*') ? 'fill-white' : 'fill-gray-500' }}"/></g></g></svg>
                 <span class="ml-3">Défenses</span>
             </a>
